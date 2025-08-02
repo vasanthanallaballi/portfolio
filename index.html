@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vasantha's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      color: #333;
+    }
+
+    nav {
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffe7;
+    }
+
+    section {
+      padding: 100px 50px;
+      min-height: 100vh;
+    }
+
+    #home {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to left, #ffecd2, #fcb69f);
+    }
+
+    #home h1 {
+      font-size: 3.5rem;
+      animation: fadeInLeft 1.5s ease;
+      color: #ff0066;
+    }
+
+    #home img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    #home img:hover {
+      transform: scale(1.08);
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    #education {
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    }
+
+    .edu-card {
+      background: linear-gradient(135deg, #20201f 0%, #fda085 100%);
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      color: #222;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    #skills {
+      background: linear-gradient(to right, #d4fc79, #96e6a1);
+    }
+
+    .skills ul {
+      list-style: none;
+    }
+
+    .skills li {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-weight: 500;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .skills li:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div><a href="#home">Home</a></div>
+    <div>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+    </div>
+  </nav>
+
+  <section id="home">
+    <div>
+      <h1>Vasantha</h1>
+    </div>
+    <div>
+      <img src="WhatsApp Image 2025-07-10 at 15.37.59_044ff144.jpg">
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-card">
+      <h3>10th Class</h3>
+      <p>Scored 585/600 in 2022</p>
+    </div>
+    <div class="edu-card">
+      <h3>Intermediate</h3>
+      <p>Completed in Hyderabad (2022 - 2024)</p>
+    </div>
+    <div class="edu-card">
+      <h3>Current CGPA</h3>
+      <p>9.3</p>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Strong in C Programming</li>
+      <li>Scored A+ (Highest Marks) in C</li>
+      <li>Solved 30 DSA problems on LeetCode</li>
+      <li>Basic knowledge in HTML and CSS</li>
+    </ul>
+  </section>
+</body>
+
+</html>
+
+  
