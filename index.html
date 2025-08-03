@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vasantha's Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -16,15 +16,18 @@
     }
 
     body {
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
-      color: #333;
+      background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+      color: #1e1e2f;
+      line-height: 1.6;
     }
 
     nav {
-      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      background: linear-gradient(90deg, #004e92, #000428);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
       position: fixed;
       width: 100%;
       top: 0;
@@ -32,7 +35,7 @@
     }
 
     nav a {
-      color: #fff;
+      color: #ffffff;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: 500;
@@ -40,7 +43,7 @@
     }
 
     nav a:hover {
-      color: #00ffe7;
+      color: #00bcd4;
     }
 
     section {
@@ -52,13 +55,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(to left, #ffecd2, #fcb69f);
+      flex-wrap: wrap;
     }
 
     #home h1 {
       font-size: 3.5rem;
       animation: fadeInLeft 1.5s ease;
-      color: #ff0066;
+      color: #003049;
+    }
+
+    #home .intro {
+      max-width: 500px;
     }
 
     #home img {
@@ -66,7 +73,7 @@
       height: 250px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 6px 20px rgba(0, 128, 128, 0.3);
       transition: transform 0.3s;
     }
 
@@ -74,38 +81,50 @@
       transform: scale(1.08);
     }
 
+    .leetcode-btn {
+      margin-top: 20px;
+    }
+
+    .leetcode-btn a {
+      background: #0288d1;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 10px;
+      transition: background 0.3s;
+    }
+
+    .leetcode-btn a:hover {
+      background: #0277bd;
+    }
+
     @keyframes fadeInLeft {
       from {
         opacity: 0;
         transform: translateX(-50px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
       }
     }
 
-    #education {
-      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    h2 {
+      margin-bottom: 20px;
+      color: #01579b;
     }
 
     .edu-card {
-      background: linear-gradient(135deg, #20201f 0%, #fda085 100%);
+      background: #e3f2fd;
       margin-bottom: 20px;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
-      color: #222;
-    }
-
-    .edu-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    #skills {
-      background: linear-gradient(to right, #d4fc79, #96e6a1);
+      color: #003049;
     }
 
     .skills ul {
@@ -113,17 +132,69 @@
     }
 
     .skills li {
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      background: #bbdefb;
       padding: 10px 15px;
       border-radius: 8px;
       margin-bottom: 10px;
       font-weight: 500;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease;
     }
 
     .skills li:hover {
       transform: scale(1.05);
+    }
+
+    .soft-skills {
+      margin-top: 30px;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .contact a.button {
+      background: linear-gradient(to right, #03a9f4, #0288d1);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .contact a.button:hover {
+      background: linear-gradient(to right, #039be5, #0277bd);
+    }
+
+    @media (max-width: 768px) {
+      #home {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #home img {
+        margin-top: 20px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav div {
+        margin: 5px 0;
+      }
+
+      section {
+        padding: 80px 20px;
+      }
     }
   </style>
 </head>
@@ -132,18 +203,33 @@
   <nav>
     <div><a href="#home">Home</a></div>
     <div>
+      <a href="#about">About Me</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
+      <a href="#interests">Interests</a>
     </div>
   </nav>
 
   <section id="home">
-    <div>
-      <h1>Vasantha</h1>
+  <div class="intro">
+    <h1>Vasantha</h1>
+    <p style="font-size:1.2rem; color:#01579b; margin-top:10px;">
+      2nd year B.Tech student at Geethanjali College of Engineering and Technology
+    </p>
+    <div class="leetcode-btn">
+      <a href="https://leetcode.com/vasanthavasu/" target="_blank">LeetCode</a>
+      <a href="https://github.com/vasanthanallaballi" target="_blank">GitHub</a>
     </div>
-    <div>
-      <img src="WhatsApp Image 2025-07-10 at 15.37.59_044ff144.jpg">
-    </div>
+  </div>
+  <div>
+    <img src="WhatsApp Image 2025-08-03 at 12.50.08_4d7b56f6.jpg" alt="Profile Picture" />
+  </div>
+</section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm <b>Vasantha</b>, a passionate and dedicated learner with a strong interest in computer science and problem solving. I am currently pursuing my undergraduate studies at <b>Geethanjali College of Engineering and Technology</b>, where I am building a strong foundation in core technical and programming concepts. I enjoy exploring new technologies and continuously aim to improve my skills through practice and hands-on projects. My journey started with a strong foundation in C programming, and since then, I've taken on challenges like solving DSA problems on platforms like LeetCode.</p>
+    <p>I’m also gaining experience in web development using HTML and CSS.</p>
   </section>
 
   <section id="education">
@@ -153,26 +239,43 @@
       <p>Scored 585/600 in 2022</p>
     </div>
     <div class="edu-card">
-      <h3>Intermediate</h3>
-      <p>Completed in Hyderabad (2022 - 2024)</p>
+      <h3>Intermediate (2022 - 2024)</h3>
+      <p>Scored 95%</p>
     </div>
     <div class="edu-card">
-      <h3>Current CGPA</h3>
-      <p>9.3</p>
+      <h3>B.Tech in CSE</h3>
+      <p>Current CGPA: 9.3</p>
     </div>
   </section>
 
   <section id="skills" class="skills">
-    <h2>Skills</h2>
+    <h2>Technical Skills</h2>
     <ul>
-      <li>Strong in C Programming</li>
-      <li>Scored A+ (Highest Marks) in C</li>
+      <li>C Programmer</li>
       <li>Solved 30 DSA problems on LeetCode</li>
-      <li>Basic knowledge in HTML and CSS</li>
+      <li>Basic knowledge in HTML, CSS, and JavaScript</li>
+      <li>Basic knowledge in Java, SQL, Python</li>
     </ul>
+
+    <div class="soft-skills">
+      <h2>Soft Skills</h2>
+      <ul>
+        <li>Adaptability</li>
+        <li>Teamwork</li>
+        <li>Time Management</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="interests">
+    <h2>Interests</h2>
+    <p>I am highly interested in coding, participating in hackathons, learning web development, and engaging with tech communities. Apart from academics, I enjoy watching tech videos, experimenting with web projects, and spending time sketching or listening to music.</p>
+  </section>
+
+  <section class="contact">
+    <p>📧 Reach me at: <strong>24r11a05fa@gcet.edu.in</strong></p>
+    <a href="mailto:24r11a05fa@gcet.edu.in" class="button">Work with Me</a>
   </section>
 </body>
 
 </html>
-
-  
